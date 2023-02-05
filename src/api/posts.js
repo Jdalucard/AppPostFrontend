@@ -10,11 +10,15 @@ export const createPostRequest = async (post) => {
   for (let key in post) {
     form.append(key, post[key]);
   }
-  const res = await axios.post("/posts", form, {
-    headers: {
-      "Content-Type": "multipart/form-data",
-    },
-  });
+  const res = await axios.post(
+    "https://apipostgalery.onrender.com/posts",
+    form,
+    {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    }
+  );
 
   return res;
 };
