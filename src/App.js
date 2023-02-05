@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { HomaPage, PostForm, NotFoundPage } from "./pages/Index.js";
+import { Routes, Route } from "react-router-dom";
+import { PostProvider } from "./context/postContext.js";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="bg-neutral-900 min-h-screen flex items-center">
+        <div className="px-100 container m-auto ">
+          <PostProvider>
+            <Routes>
+              <Route path="/" element={<HomaPage />} />
+              <Route path="/new" element={<PostForm />} />
+              <Route path="/posts/:id" element={<PostForm />} />
+              <Route path="*" element={<NotFoundPage />} />
+              
+            </Routes>
+            <Toaster/>
+          </PostProvider>
+        </div>
+      </div>
+    </>
   );
 }
 
