@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const getPostsRequests = async () => {
-  const res = await axios.get("/posts");
+  const res = await axios.get("https://apipostgalery.onrender.com/posts");
   return res.data;
 };
 
@@ -21,12 +21,16 @@ export const createPostRequest = async (post) => {
 
 /* http://localhost:4500/post/id */
 export const deletePostRequest = async (_id) => {
-  const res = await axios.delete(`/posts/${_id}`);
+  const res = await axios.delete(
+    `https://apipostgalery.onrender.com/posts/${_id}`
+  );
   return res;
 };
 
 export const getPostRequest = async (_id) => {
-  const res = await axios.get(`/posts/${_id}`);
+  const res = await axios.get(
+    `https://apipostgalery.onrender.com/posts/${_id}`
+  );
   return res;
 };
 
@@ -35,6 +39,9 @@ export const updatePostRequest = async (_id, newfields) => {
   for (let key in newfields) {
     form.append(key, newfields[key]);
   }
-  const res = await axios.put(`/posts/${_id}`, newfields);
+  const res = await axios.put(
+    `https://apipostgalery.onrender.com/posts/${_id}`,
+    newfields
+  );
   return res;
 };
