@@ -3,8 +3,7 @@ import { Form, Formik, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { usePosts } from "../context/postContext";
 import { useNavigate, useParams, Link } from "react-router-dom";
-import {AiOutlineLoading3Quarters} from "react-icons/ai"
-
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 export const PostForm = () => {
   const { createPost, getPost, upDatePost } = usePosts();
@@ -23,7 +22,7 @@ export const PostForm = () => {
         setPost(res);
       }
     })();
-  }, [params.id]);
+  });
 
   /*   useEffect(() => {
     const obtenerpost = async () => {
@@ -126,7 +125,11 @@ export const PostForm = () => {
                 className="bg-indigo-600 px-4 hover:bg-indigo-500 py-2 rounded mt-2 text-white focus:outline-none"
                 disabled={isSubmitting}
               >
-                {isSubmitting ? (<AiOutlineLoading3Quarters className="animate-spin h-5 w-5"/>) : "save"}
+                {isSubmitting ? (
+                  <AiOutlineLoading3Quarters className="animate-spin h-5 w-5" />
+                ) : (
+                  "save"
+                )}
               </button>
             </Form>
           )}
