@@ -22,7 +22,7 @@ export const PostForm = () => {
         setPost(res);
       }
     })();
-  });
+  }, [params.id]);
 
   /*   useEffect(() => {
     const obtenerpost = async () => {
