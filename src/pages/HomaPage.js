@@ -21,7 +21,6 @@ export const HomaPage = () => {
             <PostCard post={post} key={post._id} />
           ))}
         </div>
-        ;
       </>
     );
   };
