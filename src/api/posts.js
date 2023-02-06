@@ -19,7 +19,7 @@ export const createPostRequest = async (post) => {
       },
     }
   );
-
+  console.log(res.data);
   return res;
 };
 
@@ -38,14 +38,15 @@ export const getPostRequest = async (_id) => {
   return res;
 };
 
-export const updatePostRequest = async (_id, newfields) => {
+export const updatePostRequest = async (_id, newfile) => {
   const form = new FormData();
-  for (let key in newfields) {
-    form.append(key, newfields[key]);
+  for (let key in newfile) {
+    form.append(key, newfile[key]);
   }
   const res = await axios.put(
     `https://apipostgalery.onrender.com/posts/${_id}`,
-    newfields
+    newfile
   );
+  console.log(res);
   return res;
 };
