@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 export const PostCard = ({ post }) => {
   const { deletePost } = usePosts();
+
   const navigate = useNavigate();
 
   const handleDelete = (id) => {
@@ -65,7 +66,11 @@ export const PostCard = ({ post }) => {
         <p> {post.description}</p>
       </div>
       {post.image && (
-        <img src={post.image.url} alt="" className="w-full h-96 object-cover" />
+        <img
+          src={post.image.secure_url}
+          alt=""
+          className="w-full h-96 object-cover"
+        />
       )}
     </div>
   );

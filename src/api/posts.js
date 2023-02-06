@@ -19,7 +19,7 @@ export const createPostRequest = async (post) => {
       },
     }
   );
-  console.log(res.data);
+
   return res;
 };
 
@@ -45,8 +45,13 @@ export const updatePostRequest = async (_id, newfile) => {
   }
   const res = await axios.put(
     `https://apipostgalery.onrender.com/posts/${_id}`,
-    newfile
+    newfile,
+    {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    }
   );
-  console.log(res);
-  return res;
+
+  return res.data;
 };
