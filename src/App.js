@@ -6,17 +6,16 @@ import { Toaster } from "react-hot-toast";
 function App() {
   return (
     <>
-      <div className="bg-neutral-900 min-h-screen flex items-center">
-        <div className="px-100 container m-auto ">
+      <div className="bg-neutral-900 min-h-screen flex items-center ">
+        <div className="px-100 container ">
           <PostProvider>
             <Routes>
               <Route path="/" element={<HomaPage />} />
               <Route path="/new" element={<PostForm />} />
               <Route path="/posts/:id" element={<PostForm />} />
               <Route path="*" element={<NotFoundPage />} />
-              
             </Routes>
-            <Toaster/>
+            <Toaster />
           </PostProvider>
         </div>
       </div>

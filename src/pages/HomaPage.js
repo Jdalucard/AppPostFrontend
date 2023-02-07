@@ -16,7 +16,7 @@ export const HomaPage = () => {
       );
     return (
       <>
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-3  gap-1">
           {posts.map((post) => (
             <PostCard post={post} key={post._id} />
           ))}
