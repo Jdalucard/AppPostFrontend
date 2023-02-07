@@ -53,10 +53,10 @@ export const PostProvider = ({ children }) => {
   };
   const upDatePost = async (id, newfile) => {
     try {
-      await updatePostRequest(id, newfile);
+      const res = await updatePostRequest(id, newfile);
 
-      /*    setPosts(posts.map((post) => (post.id === id ? res.data : post)));
-       */
+      setPosts(posts.map((post) => (post.id === id ? res.data : post)));
+
       getPosts();
     } catch (error) {
       console.log(error);

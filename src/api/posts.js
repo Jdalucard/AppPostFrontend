@@ -53,5 +53,5 @@ export const updatePostRequest = async (_id, newfile) => {
     }
   );
 
-  return res.data;
+  return res;
 };
