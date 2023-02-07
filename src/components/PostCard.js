@@ -46,11 +46,12 @@ export const PostCard = ({ post }) => {
 
   return (
     <div
-      className="bg-zinc-800 text-white rounded-sm shadow-md shadow-black hover:bg-zinc-700  mx-2 my-2 hover:cursor-pointer "
+      className="bg-zinc-800 text-white rounded-sm shadow-md shadow-black hover:bg-zinc-700  mx-2 my-2 hover:cursor-pointer   "
       onClick={() => navigate(`/posts/${post._id}`)}
     >
+      {/*  div card css */}
       <div className="px-3 py-7  my-1 ">
-        <div className="flex justify-between">
+        <div className="flex justify-between sm:">
           <h3>{post.title}</h3>
 
           <button
